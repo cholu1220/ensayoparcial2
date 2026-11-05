@@ -8,3 +8,11 @@ services:
     ports:
       - "5007:5006"
     command: sh -c "pip install flask && python app.py"
+
+  php:
+    image: php:8.3-cli
+    container_name: contenedor_php_parcial
+    working_dir: /app
+    volumes:
+      - ./php:/app
+    command: php suma.php
