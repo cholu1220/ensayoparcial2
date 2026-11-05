@@ -1,0 +1,10 @@
+services:
+  python:
+    image: python:3.12-slim
+    container_name: contenedor_python_parcial
+    working_dir: /app
+    volumes:
+      - ./python:/app
+    ports:
+      - "5007:5006"
+    command: sh -c "pip install flask && python app.py"
